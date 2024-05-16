@@ -65,32 +65,36 @@ class Reviewer(Mentor):
 
 
 # Создаем экземпляр студента
-best_student = Student('Ruoy', 'Eman', 'your_gender')
-best_student.courses_in_progress += ['Python', 'Git']
+some_student = Student('Ruoy', 'Eman', 'your_gender')
+some_student.courses_in_progress += ['Python', 'Git']
+some_student.finished_courses += ['Введение в программирование']
 
 # Создаем экземпляр лектора
-cool_lecturer = Lecturer('Some', 'Buddy')
-cool_lecturer.courses_attached += ['Python']
+some_lecturer = Lecturer('Some', 'Buddy')
+some_lecturer.courses_attached += ['Python']
 
 # Создаем экземпляр проверяющего
-cool_reviewer = Reviewer('Another', 'Person')
-cool_reviewer.courses_attached += ['Python']
+some_reviewer = Reviewer('Another', 'Person')
+some_reviewer.courses_attached += ['Python']
 
 # Проверяющий выставляет оценки студенту
-cool_reviewer.rate_hw(best_student, 'Python', 9.9)
-cool_reviewer.rate_hw(best_student, 'Python', 9.9)
-cool_reviewer.rate_hw(best_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
 
 # Студент выставляет оценки лектору
-best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
-best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
-best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
-
-# Выводим информацию о студенте
-print(best_student)
-
-# Выводим информацию о лекторе
-print(cool_lecturer)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
 
 # Выводим информацию о проверяющем
-print(cool_reviewer)
+print(some_reviewer)
+print()
+
+# Выводим информацию о лекторе
+print(some_lecturer)
+print()
+
+# Выводим информацию о студенте
+print(some_student)
+print()
