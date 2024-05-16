@@ -141,7 +141,7 @@ some_student.courses_in_progress += ['Python']  # Добавляем курс, �
 some_student.finished_courses += ['Введение в программирование']  # Добавляем завершенный курс
 
 # Создаем лектора
-some_lecturer = Lecturer('Cool', 'Lecturer')
+some_lecturer = Lecturer('Some', 'Lecturer')
 some_lecturer.courses_attached += ['Python']  # Закрепляем курс за лектором
 
 # Создаем проверяющего
