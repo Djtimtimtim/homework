@@ -42,35 +42,11 @@ class Student:
             return NotImplemented
         return self.average_grade() < other.average_grade()
 
-    def __le__(self, other):
-        # Сравнение студентов по средней оценке (меньше или равно)
-        if not isinstance(other, Student):
-            return NotImplemented
-        return self.average_grade() <= other.average_grade()
-
-    def __eq__(self, other):
-        # Сравнение студентов по средней оценке (равно)
-        if not isinstance(other, Student):
-            return NotImplemented
-        return self.average_grade() == other.average_grade()
-
-    def __ne__(self, other):
-        # Сравнение студентов по средней оценке (не равно)
-        if not isinstance(other, Student):
-            return NotImplemented
-        return self.average_grade() != other.average_grade()
-
     def __gt__(self, other):
         # Сравнение студентов по средней оценке (больше)
         if not isinstance(other, Student):
             return NotImplemented
         return self.average_grade() > other.average_grade()
-
-    def __ge__(self, other):
-        # Сравнение студентов по средней оценке (больше или равно)
-        if not isinstance(other, Student):
-            return NotImplemented
-        return self.average_grade() >= other.average_grade()
 
 class Mentor:
     def __init__(self, name, surname):
@@ -105,35 +81,11 @@ class Lecturer(Mentor):
             return NotImplemented
         return self.average_grade() < other.average_grade()
 
-    def __le__(self, other):
-        # Сравнение лекторов по средней оценке (меньше или равно)
-        if not isinstance(other, Lecturer):
-            return NotImplemented
-        return self.average_grade() <= other.average_grade()
-
-    def __eq__(self, other):
-        # Сравнение лекторов по средней оценке (равно)
-        if not isinstance(other, Lecturer):
-            return NotImplemented
-        return self.average_grade() == other.average_grade()
-
-    def __ne__(self, other):
-        # Сравнение лекторов по средней оценке (не равно)
-        if not isinstance(other, Lecturer):
-            return NotImplemented
-        return self.average_grade() != other.average_grade()
-
     def __gt__(self, other):
         # Сравнение лекторов по средней оценке (больше)
         if not isinstance(other, Lecturer):
             return NotImplemented
         return self.average_grade() > other.average_grade()
-
-    def __ge__(self, other):
-        # Сравнение лекторов по средней оценке (больше или равно)
-        if not isinstance(other, Lecturer):
-            return NotImplemented
-        return self.average_grade() >= other.average_grade()
 
 class Reviewer(Mentor):
     def __init__(self, name, surname):
@@ -192,19 +144,22 @@ print()
 print(some_student)
 print()
 
+
+print('Сравнение лекторов по средней оценке за лекции и студентов по средней оценке за домашние задания:')
+
 # Сравниваем студентов
 another_student = Student('John', 'Doe', 'male')
 another_student.courses_in_progress += ['Python']
 another_student.finished_courses += ['Введение в программирование']
-another_student.grades = {'Python': [8.0, 8.5, 9.0]}
+another_student.grades = {'Python': [9.9, 9.9, 9.9]}
 
-print(some_student > another_student)  # True
-print(some_student < another_student)  # False
+print(some_student > another_student)
+print(some_student < another_student)
 
 # Сравниваем лекторов
 another_lecturer = Lecturer('Jane', 'Smith')
 another_lecturer.courses_attached += ['Python']
-another_lecturer.grades = {'Python': [8.0, 8.5, 9.0]}
+another_lecturer.grades = {'Python': [9.9, 9.9, 9.9]}
 
-print(some_lecturer > another_lecturer)  # True
-print(some_lecturer < another_lecturer)  # False
+print(some_lecturer > another_lecturer)
+print(some_lecturer < another_lecturer)
