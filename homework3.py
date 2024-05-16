@@ -116,23 +116,20 @@ some_lecturer.courses_attached += ['Python']  # Закрепляем курс з
 some_reviewer = Reviewer('Some', 'Buddy')
 some_reviewer.courses_attached += ['Python']  # Закрепляем курс за проверяющим
 
-# Проверяющий оценивает домашку студента
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 9)
-some_reviewer.rate_hw(some_student, 'Python', 8)
+
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+some_reviewer.rate_hw(some_student, 'Python', 9.9)
+print(some_student)
+
+
 
 # Студент оценивает лектора
-some_student.rate_lecturer(some_lecturer, 'Python', 10)
-some_student.rate_lecturer(some_lecturer, 'Python', 9)
-some_student.rate_lecturer(some_lecturer, 'Python', 8)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
+some_student.rate_lecturer(some_lecturer, 'Python', 9.9)
 
-# Сравниваем студентов и лекторов
-another_student = Student('John', 'Doe', 'male')
-another_student.courses_in_progress += ['Python']
-another_student.finished_courses += ['Введение в программирование']
-some_reviewer.rate_hw(another_student, 'Python', 7)
-some_reviewer.rate_hw(another_student, 'Python', 6)
-some_reviewer.rate_hw(another_student, 'Python', 5)
+
 
 print(some_student)
 print(some_lecturer)
