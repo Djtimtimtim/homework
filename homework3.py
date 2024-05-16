@@ -1,29 +1,29 @@
-"""Задание № 3. Полиморфизм и магические методы
+# Задание № 3. Полиморфизм и магические методы
+#
+# 1. Перегрузите магический метод str у всех классов.
+#
+# У проверяющих он должен выводить информацию в следующем виде:
+# print(some_reviewer)
+# Имя: Some
+# Фамилия: Buddy
+#
+# У лекторов:
+# print(some_lecturer)
+# Имя: Some
+# Фамилия: Buddy
+# Средняя оценка за лекции: 9.9
+#
+# А у студентов так:
+# print(some_student)
+# Имя: Ruoy
+# Фамилия: Eman
+# Средняя оценка за домашние задания: 9.9
+# Курсы в процессе изучения: Python, Git
+# Завершенные курсы: Введение в программирование
+#
+# 2. Реализуйте возможность сравнивать (через операторы сравнения) между собой лекторов по средней оценке за лекции и
+# студентов по средней оценке за домашние задания.
 
-1. Перегрузите магический метод str у всех классов.
-
-У проверяющих он должен выводить информацию в следующем виде:
-print(some_reviewer)
-Имя: Some
-Фамилия: Buddy
-
-У лекторов:
-print(some_lecturer)
-Имя: Some
-Фамилия: Buddy
-Средняя оценка за лекции: 9.9
-
-А у студентов так:
-print(some_student)
-Имя: Ruoy
-Фамилия: Eman
-Средняя оценка за домашние задания: 9.9
-Курсы в процессе изучения: Python, Git
-Завершенные курсы: Введение в программирование
-
-2.Реализуйте возможность сравнивать (через операторы сравнения) между собой лекторов по средней оценке за лекции и
-студентов по средней оценке за домашние задания.
-"""
 
 """Нам нужно перегрузить магический метод __str__ у всех классов (Student, Lecturer, Reviewer) и реализовать 
 возможность сравнения студентов и лекторов по средней оценке.
@@ -136,43 +136,43 @@ class Reviewer(Mentor):
             return 'Ошибка'  # Возвращаем ошибку, если что-то не так
 
 # Создаем студента
-best_student = Student('Ruoy', 'Eman', 'your_gender')
-best_student.courses_in_progress += ['Python']  # Добавляем курс, который студент сейчас проходит
-best_student.finished_courses += ['Введение в программирование']  # Добавляем завершенный курс
+some_student = Student('Ruoy', 'Eman', 'your_gender')
+some_student.courses_in_progress += ['Python']  # Добавляем курс, который студент сейчас проходит
+some_student.finished_courses += ['Введение в программирование']  # Добавляем завершенный курс
 
 # Создаем лектора
-cool_lecturer = Lecturer('Cool', 'Lecturer')
-cool_lecturer.courses_attached += ['Python']  # Закрепляем курс за лектором
+some_lecturer = Lecturer('Cool', 'Lecturer')
+some_lecturer.courses_attached += ['Python']  # Закрепляем курс за лектором
 
 # Создаем проверяющего
-cool_reviewer = Reviewer('Some', 'Buddy')
-cool_reviewer.courses_attached += ['Python']  # Закрепляем курс за проверяющим
+some_reviewer = Reviewer('Some', 'Buddy')
+some_reviewer.courses_attached += ['Python']  # Закрепляем курс за проверяющим
 
 # Проверяющий оценивает домашку студента
-cool_reviewer.rate_hw(best_student, 'Python', 10)
-cool_reviewer.rate_hw(best_student, 'Python', 9)
-cool_reviewer.rate_hw(best_student, 'Python', 8)
+some_reviewer.rate_hw(some_student, 'Python', 10)
+some_reviewer.rate_hw(some_student, 'Python', 9)
+some_reviewer.rate_hw(some_student, 'Python', 8)
 
 # Студент оценивает лектора
-best_student.rate_lecturer(cool_lecturer, 'Python', 10)
-best_student.rate_lecturer(cool_lecturer, 'Python', 9)
-best_student.rate_lecturer(cool_lecturer, 'Python', 8)
+some_student.rate_lecturer(some_lecturer, 'Python', 10)
+some_student.rate_lecturer(some_lecturer, 'Python', 9)
+some_student.rate_lecturer(some_lecturer, 'Python', 8)
 
 # Выводим информацию о студенте, лекторе и проверяющем
-print(best_student)
-print(cool_lecturer)
-print(cool_reviewer)
+print(some_student)
+print(some_lecturer)
+print(some_reviewer)
 
 # Сравниваем студентов и лекторов
 another_student = Student('John', 'Doe', 'male')
 another_student.courses_in_progress += ['Python']
 another_student.finished_courses += ['Введение в программирование']
-cool_reviewer.rate_hw(another_student, 'Python', 7)
-cool_reviewer.rate_hw(another_student, 'Python', 6)
-cool_reviewer.rate_hw(another_student, 'Python', 5)
+some_reviewer.rate_hw(another_student, 'Python', 7)
+some_reviewer.rate_hw(another_student, 'Python', 6)
+some_reviewer.rate_hw(another_student, 'Python', 5)
 
-print(best_student > another_student)  # True, если средняя оценка best_student выше
-print(cool_lecturer == cool_lecturer)  # True, если средние оценки равны
+print(some_student > another_student)  # True, если средняя оценка best_student выше
+print(some_lecturer == some_lecturer)  # True, если средние оценки равны
 
 
 
