@@ -16,6 +16,17 @@ class Student:
         else:
             return 'Ошибка'
 
+    def __str__(self):
+        average_grade = sum(sum(grades) for grades in self.grades.values()) / sum(len(grades) for grades in self.grades.values())
+        in_progress = ', '.join(self.courses_in_progress)
+        finished = ', '.join(self.finished_courses)
+        return (f"У студентов: \n"
+                f"Имя: {self.name}\n"
+                f"Фамилия: {self.surname}\n"
+                f"Средняя оценка за домашние задания: {average_grade:.1f}\n"
+                f"Курсы в процессе изучения: {in_progress}\n"
+                f"Завершенные курсы: {finished}")
+
 class Mentor:
     def __init__(self, name, surname):
         self.name = name
@@ -26,6 +37,13 @@ class Lecturer(Mentor):
     def __init__(self, name, surname):
         super().__init__(name, surname)
         self.grades = {}
+
+    def __str__(self):
+        average_grade = sum(sum(grades) for grades in self.grades.values()) / sum(len(grades) for grades in self.grades.values())
+        return (f"У лекторов: \n"
+                f"Имя: {self.name}\n"
+                f"Фамилия: {self.surname}\n"
+                f"Средняя оценка за лекции: {average_grade:.1f}")
 
 class Reviewer(Mentor):
     def __init__(self, name, surname):
@@ -39,6 +57,12 @@ class Reviewer(Mentor):
                 student.grades[course] = [grade]
         else:
             return 'Ошибка'
+
+    def __str__(self):
+        return (f"У проверяющих: \n"
+                f"Имя: {self.name}\n"
+                f"Фамилия: {self.surname}\n")
+
 
 # Создаем экземпляр студента
 best_student = Student('Ruoy', 'Eman', 'your_gender')
@@ -62,8 +86,11 @@ best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
 best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
 best_student.rate_lecturer(cool_lecturer, 'Python', 9.9)
 
-# Выводим оценки студента
-print(best_student.grades)
+# Выводим информацию о студенте
+print(best_student)
 
-# Выводим оценки лектора
-print(cool_lecturer.grades)
+# Выводим информацию о лекторе
+print(cool_lecturer)
+
+# Выводим информацию о проверяющем
+print(cool_reviewer)

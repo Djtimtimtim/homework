@@ -56,9 +56,9 @@ cool_reviewer = Reviewer('Another', 'Person')
 cool_reviewer.courses_attached += ['Python']
 
 # Проверяющий выставляет оценки студенту
-cool_reviewer.rate_hw(best_student, 'Python', 10)
-cool_reviewer.rate_hw(best_student, 'Python', 10)
-cool_reviewer.rate_hw(best_student, 'Python', 10)
+cool_reviewer.rate_hw(best_student, 'Python', 9.9)
+cool_reviewer.rate_hw(best_student, 'Python', 9.9)
+cool_reviewer.rate_hw(best_student, 'Python', 9.9)
 
 # Выводим оценки студента
 print(best_student.grades)
