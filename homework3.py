@@ -126,11 +126,6 @@ some_student.rate_lecturer(some_lecturer, 'Python', 10)
 some_student.rate_lecturer(some_lecturer, 'Python', 9)
 some_student.rate_lecturer(some_lecturer, 'Python', 8)
 
-# Выводим информацию о студенте, лекторе и проверяющем
-print(some_student)
-print(some_lecturer)
-print(some_reviewer)
-
 # Сравниваем студентов и лекторов
 another_student = Student('John', 'Doe', 'male')
 another_student.courses_in_progress += ['Python']
@@ -139,8 +134,6 @@ some_reviewer.rate_hw(another_student, 'Python', 7)
 some_reviewer.rate_hw(another_student, 'Python', 6)
 some_reviewer.rate_hw(another_student, 'Python', 5)
 
-print(some_student > another_student)  # True, если средняя оценка best_student выше
-print(some_lecturer == some_lecturer)  # True, если средние оценки равны
-
-# Проверка вывода информации о студенте
 print(some_student)
+print(some_lecturer)
+print(some_reviewer)
