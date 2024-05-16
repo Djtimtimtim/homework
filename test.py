@@ -66,7 +66,7 @@ class Reviewer(Mentor):
 
 # Создаем экземпляр студента
 best_student = Student('Ruoy', 'Eman', 'your_gender')
-best_student.courses_in_progress += ['Python']
+best_student.courses_in_progress += ['Python', 'Git']
 
 # Создаем экземпляр лектора
 cool_lecturer = Lecturer('Some', 'Buddy')
