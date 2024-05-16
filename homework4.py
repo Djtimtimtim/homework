@@ -198,4 +198,3 @@ average_lecturer_python = average_lecturer_grade([lecturer1, lecturer2], 'Python
 
 print(f"\nСредняя оценка за домашние задания по курсу Python: {average_student_python:.1f}")
 print(f"Средняя оценка за лекции по курсу Python: {average_lecturer_python:.1f}")
-
