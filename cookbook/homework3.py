@@ -61,7 +61,7 @@ with open(output_file, 'w', encoding='utf-8') as f:  # Открываем ито
         f.write(f"{info[0]}\n{info[1]}\n")  # Записываем имя файла и количество строк
         f.writelines(info[2])  # Записываем содержимое файла
 
-print(f"Содержимое файлов успешно объединено в {output_file}")  # Выводим сообщение об успешном завершении
+print(f"Файлы объедены в {output_file}")  
 
 
 # os.listdir(path):
