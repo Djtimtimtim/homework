@@ -1,3 +1,24 @@
+# Задача №1
+# Должен получится следующий словарь
+
+# cook_book = {
+#   'Омлет': [
+#     {'ingredient_name': 'Яйцо', 'quantity': 2, 'measure': 'шт.'},
+#     {'ingredient_name': 'Молоко', 'quantity': 100, 'measure': 'мл'},
+#     {'ingredient_name': 'Помидор', 'quantity': 2, 'measure': 'шт'}
+#     ],
+#   'Утка по-пекински': [
+#     {'ingredient_name': 'Утка', 'quantity': 1, 'measure': 'шт'},
+#     {'ingredient_name': 'Вода', 'quantity': 2, 'measure': 'л'},
+#     {'ingredient_name': 'Мед', 'quantity': 3, 'measure': 'ст.л'},
+#     {'ingredient_name': 'Соевый соус', 'quantity': 60, 'measure': 'мл'}
+#     ],
+#   'Запеченный картофель': [
+#     {'ingredient_name': 'Картофель', 'quantity': 1, 'measure': 'кг'},
+#     {'ingredient_name': 'Чеснок', 'quantity': 3, 'measure': 'зубч'},
+#     {'ingredient_name': 'Сыр гауда', 'quantity': 100, 'measure': 'г'},
+#     ]
+#   }
 import pprint
 import json
 
@@ -32,29 +53,12 @@ def save_cookbook(cook_book, output_file_path):
     with open(output_file_path, 'w', encoding='utf-8') as file:
         json.dump(cook_book, file, ensure_ascii=False, indent=4)
 
-def get_shop_list_by_dishes(cook_book, dishes, person_count):
-    shop_list = {}
-    for dish in dishes:
-        if dish in cook_book:
-            for ingredient in cook_book[dish]:
-                name = ingredient['ingredient_name']
-                if name in shop_list:
-                    shop_list[name]['quantity'] += ingredient['quantity'] * person_count
-                else:
-                    shop_list[name] = {
-                        'measure': ingredient['measure'],
-                        'quantity': ingredient['quantity'] * person_count
-                    }
-    return shop_list
-
 # Пример использования
-file_path = './cookbook/recipes.txt'
-output_file_path = './cookbook/cook_book.json'
+file_path = './recipes.txt'
+output_file_path = './cook_book.json'
 cook_book = read_cookbook(file_path)
 # Форматированный вывод кулинарной книги
+pprint.pprint(cook_book)
 # Сохранение кулинарной книги в файл
 save_cookbook(cook_book, output_file_path)
 
-# Получение списка покупок
-shop_list = get_shop_list_by_dishes(cook_book, ['Запеченный картофель', 'Омлет'], 2)
-pprint.pprint(shop_list)

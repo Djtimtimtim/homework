@@ -1,3 +1,23 @@
+# Задача №2
+# Нужно написать функцию, которая на вход принимает список блюд из cook_book и количество персон
+# для кого мы будем готовить
+
+# get_shop_list_by_dishes(dishes, person_count)
+# На выходе мы должны получить словарь с названием ингредиентов и его количества для блюда. Например, для такого вызова
+
+# get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
+# Должен быть следующий результат:
+
+# {
+#   'Картофель': {'measure': 'кг', 'quantity': 2},
+#   'Молоко': {'measure': 'мл', 'quantity': 200},
+#   'Помидор': {'measure': 'шт', 'quantity': 4},
+#   'Сыр гауда': {'measure': 'г', 'quantity': 200},
+#   'Яйцо': {'measure': 'шт', 'quantity': 4},
+#   'Чеснок': {'measure': 'зубч', 'quantity': 6}
+# }
+# Обратите внимание, что ингредиенты могут повторяться
+
 import pprint
 import json
 
@@ -48,10 +68,10 @@ def get_shop_list_by_dishes(cook_book, dishes, person_count):
     return shop_list
 
 # Пример использования
-file_path = './cookbook/recipes.txt'
-output_file_path = './cookbook/cook_book.json'
+file_path = 'recipes.txt'
+output_file_path = 'cook_book.json'
 cook_book = read_cookbook(file_path)
-# Форматированный вывод кулинарной книги
+
 # Сохранение кулинарной книги в файл
 save_cookbook(cook_book, output_file_path)
 
